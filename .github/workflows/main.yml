@@ -1,12 +1,29 @@
-name: My first workflow
+name: Test FoodTrucks App
 
-on: push
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
-   say-hello:
-       runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
 
-       steps:
-           - name: print this message
-             run: echo "Hello this is my first workflow"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install flask pytest
+          pip install -r flask-app/requirements.txt
+
+      - name: Run tests
+        run: pytest flask-app/
              
