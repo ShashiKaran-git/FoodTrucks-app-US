@@ -43,4 +43,4 @@ deploy:
       - name: run docker image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/foodtrucks:latest .
       - name: push to docker hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/foodtrucks:latest .
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/foodtrucks:latest
