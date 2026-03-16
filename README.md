@@ -1,3 +1,4 @@
+![Test FoodTrucks App](https://github.com/ShashiKaran-git/FoodTrucks-app-US/actions/workflows/my-first-workflow.yml/badge.svg)
 SF Food Trucks
 ===
 
